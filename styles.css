@@ -1,0 +1,578 @@
+/* Genel Stil Ayarları */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    background-color: #f0f0f0;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Başlık ve Menü */
+header {
+    background: red;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed; /* Sabit konumlandırma */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+nav ul li a:hover {
+    color: #f8b400;
+    text-shadow: 0 0 10px rgba(248, 180, 0, 0.5);
+}
+
+/* Sayfanın içeriğinin header altında kalmaması için */
+body {
+    padding-top: 80px; /* Header yüksekliğine göre ayarlandı */
+}
+
+/* Hero Bölgesi */
+.hero {
+    background: url('yetkili-servisi.jpg') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.6);
+    border-radius: 10px;
+}
+
+.hero h2 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: red;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.btn:hover {
+    background: green;
+    transform: scale(1.05);
+}
+
+/* Hizmetler Bölgesi */
+.services {
+    padding: 60px 20px;
+    background: #fff;
+    text-align: center;
+}
+
+.services h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+/* Hizmet kartlarını tam 3 tane yan yana yapalım */
+.services-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 sütun olacak */
+    gap: 20px;
+    justify-content: center;
+}
+
+/* Her hizmet kartı */
+.service {
+    background: #f9f9f9;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    text-align: center;
+}
+
+.service:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Resim üstte olacak şekilde ayarlandı */
+.service img {
+    width: 100%;
+    height: 200px; /* Resmi büyüttüm */
+    object-fit: cover; /* Taşmayı önledim */
+    border-radius: 8px;
+}
+
+/* Başlık ve açıklama */
+.service h3 {
+    margin-top: 15px;
+    font-size: 1.4em;
+    color: #1e1e1e;
+}
+
+.service p {
+    font-size: 1em;
+    color: #666;
+}
+
+/* Mobil uyumluluk */
+@media (max-width: 900px) {
+    .services-container {
+        grid-template-columns: repeat(2, 1fr); /* Tablet görünümde 2 sütun */
+    }
+}
+
+@media (max-width: 600px) {
+    .services-container {
+        grid-template-columns: repeat(1, 1fr); /* Mobilde tek sütun */
+    }
+}
+
+
+/* Hakkımızda ve İletişim Bölgesi */
+.about, .contact {
+    padding: 60px 20px;
+}
+
+.about h2, .contact h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+.about p, .contact p {
+    text-align: center;
+    font-size: 1.1em;
+    color: #666;
+}
+
+/* İletişim Bölgesi */
+.contact {
+    padding: 60px 20px;
+    background: #f9f9f9;
+}
+
+.contact h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5em;
+    color: #333;
+}
+
+/* İletişim kartları düzeni */
+.contact-info {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+/* Her bir iletişim kartı */
+.contact-card {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.contact-card i {
+    font-size: 2.5em;
+    color: #f8b400;
+    margin-bottom: 15px;
+}
+
+/* Başlık ve içerik düzeni */
+.contact-card h3 {
+    font-size: 1.6em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.contact-card p {
+    font-size: 1.1em;
+    color: #666;
+}
+
+ /* Hızlı Erişim Bölgesi */
+.quick-links {
+    background-color: #f8f8f8;
+    padding: 40px 20px;
+    margin: 20px 0;
+}
+
+.quick-links h2 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.quick-links ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.quick-links ul li {
+    display: inline-block;
+    margin: 10px 20px;
+}
+
+.quick-links ul li a {
+    text-decoration: none;
+    font-size: 1.2em;
+    color: #1e1e1e;
+    transition: color 0.3s, text-shadow 0.3s;
+}
+
+.quick-links ul li a:hover {
+    color: #f8b400;
+    text-shadow: 0 0 10px rgba(248, 180, 0, 0.5);
+}
+
+
+/* Servis Talebi Bölümü */
+.service-request {
+    padding: 60px 20px;
+    background: #f8f8f8;
+}
+
+.service-request h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.service-request p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #666;
+    margin-bottom: 40px;
+}
+
+.service-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Butonlar arasında boşluk */
+}
+
+.service-buttons .btn {
+    display: inline-block;
+    background: green;
+    color: #fff;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+    flex: 1;
+    max-width: 300px; /* Butonların genişliğini sınırlamak */
+    transition: background 0.3s, transform 0.3s;
+}
+
+.service-buttons .btn:hover {
+    background: #03c03c;
+    transform: scale(1.05);
+}
+
+/* Responsive Tasarım: Mobil Cihazlarda Yalnızca Bir Buton Görünsün */
+@media (max-width: 768px) {
+    .service-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .service-buttons .btn {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/* Sık Sorulan Sorular (SSS) Bölümü */
+.faq {
+    padding: 60px 20px;
+    background-color: #f8f8f8;
+}
+
+.faq h2 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.faq-item {
+    background: #fff;
+    margin: 15px 0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.faq-item h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.faq-item p {
+    font-size: 1em;
+    color: #666;
+}
+
+
+/* Sabit Servis Çağır Butonu */
+.service-call-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: green;
+    color: #fff;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-size: 1.2em;
+    font-weight: bold;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.service-call-btn:hover {
+    background-color: #03c03c;
+    transform: scale(1.05);
+}
+
+.service-call-btn:active {
+    transform: scale(1.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+    border: 1px solid #ddd;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+  /* Genel stil */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Menü stilleri */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: red;
+    padding: 15px 20px;
+    color: white;
+}
+
+.logo {
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Hamburger menü (küçük ekranlar için) */
+.hamburger {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Mobil uyumlu düzen */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: red;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        padding: 10px 0;
+        text-align: center;
+    }
+
+    .nav-links li {
+        display: block;
+        padding: 10px 0;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+}
+/* Yorum bölümünün ekran dışına taşmasını önleme */
+.comments-container {
+    width: 100%;
+    overflow-x: auto; /* Taşmayı önler, yatay kaydırma ekler */
+    box-sizing: border-box;
+}
+
+/* Tablonun ekranı aşmaması için minimum genişlik */
+.comment-list {
+    width: 100%;
+    min-width: 600px; /* Mobilde çok sıkışmasını önler */
+    border-collapse: collapse;
+}
+
+/* Tablo hücreleri için mobil uyumluluk */
+.comment-list th, .comment-list td {
+    padding: 10px;
+    text-align: left;
+    white-space: nowrap; /* İçeriğin taşmasını önler */
+}
+
+/* Küçük ekranlar için daha iyi uyumluluk */
+@media screen and (max-width: 768px) {
+    .comments-container {
+        display: block;
+        overflow-x: auto; /* Küçük ekranlarda yatay kaydırma ekler */
+    }
+
+    .comment-list th, .comment-list td {
+        font-size: 14px; /* Mobilde daha okunaklı hale getirir */
+        padding: 8px; /* Mobilde daraltarak daha iyi görünüm sağlar */
+    }
+}
+   .customer-reviews {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+}
+
+.reviews-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.review {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    text-align: center;
+}
+
+.review h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.review p {
+    font-size: 1em;
+    color: #666;
+}
+
+.stars {
+    font-size: 1.5em;
+    color: gold;
+    margin-top: 10px;
+}
+/* Footer */
+footer {
+    background: #1e1e1e;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
